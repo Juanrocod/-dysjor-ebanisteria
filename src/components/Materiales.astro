@@ -1,0 +1,114 @@
+---
+const materiales = [
+  {
+    icono: '🪵',
+    nombre: 'Maderas nobles',
+    descripcion: 'Cedro, roble, nogal, wengué, cerezo, pino Paraná, guatambú y más. Maderas sólidas o en chapa para cada diseño.',
+  },
+  {
+    icono: '🔲',
+    nombre: 'Vidrio templado',
+    descripcion: 'Puertas, estantes y exhibidores en vidrio templado. Transparente, ahumado o satinado según el diseño.',
+  },
+  {
+    icono: '💡',
+    nombre: 'Luz LED integrada',
+    descripcion: 'Iluminación interior en placards, bibliotecas y cocinas. Cálida, fría o RGB según el ambiente deseado.',
+  },
+  {
+    icono: '⚙️',
+    nombre: 'Acero y metal',
+    descripcion: 'Marcos, bases, patas y puertas en acero negro o inoxidable. El contraste perfecto con la madera.',
+  },
+  {
+    icono: '✨',
+    nombre: 'Laqueado poliuretano',
+    descripcion: 'Acabado liso, brillante o mate de máxima durabilidad. En cualquier color RAL del catálogo.',
+  },
+  {
+    icono: '🔩',
+    nombre: 'Herrajes premium',
+    descripcion: 'Correderas Blum, bisagras Hettich, guías de cierre suave y tiradores de diseño italiano.',
+  },
+];
+---
+
+<section
+  id="materiales"
+  class="py-28 md:py-36"
+  style="background: var(--color-surface);"
+>
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Encabezado -->
+    <div class="max-w-2xl mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="block w-8 h-px" style="background: var(--color-gold);"></span>
+        <span class="text-xs tracking-[0.3em] uppercase" style="color: var(--color-gold); font-family: var(--font-sans);">
+          Materiales y técnicas
+        </span>
+      </div>
+      <h2
+        class="mb-6"
+        style="
+          font-family: var(--font-serif);
+          font-size: clamp(2rem, 4.5vw, 3.5rem);
+          font-weight: 300;
+          color: var(--color-text);
+          line-height: 1.1;
+        "
+      >
+        Materializamos en madera<br />
+        <em style="color: var(--color-gold); font-style: italic;">el mueble que soñás.</em>
+      </h2>
+      <p
+        class="text-base leading-relaxed"
+        style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300;"
+      >
+        No nos limitamos a la madera. Combinamos los mejores materiales del mercado para lograr exactamente lo que imaginás.
+      </p>
+    </div>
+
+    <!-- Grilla de materiales -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style="background: var(--color-border);">
+      {materiales.map((mat) => (
+        <div
+          class="group p-8 transition-colors duration-300"
+          style="background: var(--color-surface);"
+          onmouseover="this.style.background='var(--color-surface-2)'"
+          onmouseout="this.style.background='var(--color-surface)'"
+        >
+          <div class="text-3xl mb-6">{mat.icono}</div>
+          <h3
+            class="mb-3 text-xl"
+            style="font-family: var(--font-serif); font-weight: 400; color: var(--color-text);"
+          >
+            {mat.nombre}
+          </h3>
+          <p
+            class="text-sm leading-relaxed"
+            style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300;"
+          >
+            {mat.descripcion}
+          </p>
+          <!-- Línea acento en hover -->
+          <div
+            class="mt-6 h-px w-0 group-hover:w-full transition-all duration-500"
+            style="background: var(--color-gold);"
+          ></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Frase final -->
+    <div class="mt-16 text-center">
+      <p
+        class="text-2xl md:text-3xl italic"
+        style="font-family: var(--font-serif); font-weight: 300; color: rgba(245,242,236,0.5);"
+      >
+        "Si lo podés imaginar, lo podemos hacer."
+      </p>
+    </div>
+
+  </div>
+</section>

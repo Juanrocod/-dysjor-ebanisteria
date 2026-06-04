@@ -1,0 +1,127 @@
+---
+const pasos = [
+  {
+    num: '01',
+    titulo: 'Nos encontramos',
+    descripcion: 'Coordinamos un encuentro para escucharte, entenderte, ver el espacio y tomar medidas.',
+  },
+  {
+    num: '02',
+    titulo: 'Diseño a tu medida',
+    descripcion: 'Plasmamos tu idea en el plano e iteramos sobre él hasta encontrar tu mueble ideal.',
+  },
+  {
+    num: '03',
+    titulo: 'Presupuesto',
+    descripcion: 'Una vez aprobado el diseño, te presentamos el presupuesto detallado con todos los materiales.',
+  },
+  {
+    num: '04',
+    titulo: 'Fabricación artesanal',
+    descripcion: 'Cada pieza se trabaja a mano en nuestro taller con los materiales elegidos y controlando cada detalle.',
+  },
+  {
+    num: '05',
+    titulo: 'Entrega e instalación',
+    descripcion: 'Llevamos el mueble y lo instalamos en su lugar. El trabajo está listo cuando encaja perfecto.',
+  },
+];
+---
+
+<section
+  id="proceso"
+  class="py-28 md:py-36"
+  style="background: var(--color-base);"
+>
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Encabezado -->
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="block w-8 h-px" style="background: var(--color-gold);"></span>
+          <span class="text-xs tracking-[0.3em] uppercase" style="color: var(--color-gold); font-family: var(--font-sans);">
+            Cómo trabajamos
+          </span>
+        </div>
+        <h2
+          style="
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            font-weight: 300;
+            color: var(--color-text);
+            line-height: 1.1;
+          "
+        >
+          Del sueño al<br />
+          <em style="color: var(--color-gold); font-style: italic;">mueble terminado.</em>
+        </h2>
+      </div>
+      <p
+        class="max-w-xs text-sm leading-relaxed"
+        style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300;"
+      >
+        Un proceso simple y transparente. Vos decidís, nosotros ejecutamos con el mejor oficio.
+      </p>
+    </div>
+
+    <!-- Pasos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px" style="background: var(--color-border);">
+      {pasos.map((paso, i) => (
+        <div
+          class="relative p-8 group"
+          style="background: var(--color-base);"
+        >
+          <!-- Número grande de fondo -->
+          <div
+            class="absolute top-4 right-4 select-none pointer-events-none"
+            aria-hidden="true"
+            style="
+              font-family: var(--font-serif);
+              font-size: 6rem;
+              font-weight: 300;
+              color: transparent;
+              -webkit-text-stroke: 1px rgba(201,162,75,0.07);
+              line-height: 1;
+            "
+          >
+            {paso.num}
+          </div>
+
+          <!-- Número visible -->
+          <div
+            class="text-xs tracking-widest uppercase mb-8"
+            style="color: var(--color-gold); font-family: var(--font-sans);"
+          >
+            {paso.num}
+          </div>
+
+          <!-- Línea separadora top -->
+          <div class="h-px mb-6" style="background: var(--color-border);"></div>
+
+          <h3
+            class="mb-4 text-xl"
+            style="font-family: var(--font-serif); font-weight: 400; color: var(--color-text);"
+          >
+            {paso.titulo}
+          </h3>
+          <p
+            class="text-sm leading-relaxed"
+            style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300;"
+          >
+            {paso.descripcion}
+          </p>
+
+          <!-- Conector (solo en desktop, entre pasos) -->
+          {i < pasos.length - 1 && (
+            <div
+              class="hidden lg:block absolute top-8 -right-[0.18rem] w-[0.36rem] h-[0.36rem] z-10 rotate-45"
+              style="background: var(--color-gold);"
+            ></div>
+          )}
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

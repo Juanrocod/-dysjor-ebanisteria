@@ -1,0 +1,104 @@
+---
+import { site } from '../data/site';
+
+const anios = new Date().getFullYear() - site.fundacion;
+---
+
+<section
+  id="nosotros"
+  class="relative py-28 md:py-36 overflow-hidden"
+  style="background: var(--color-surface);"
+>
+  <!-- Año decorativo de fondo -->
+  <div
+    class="absolute left-[-1rem] md:left-8 top-1/2 -translate-y-1/2 select-none pointer-events-none"
+    aria-hidden="true"
+    style="
+      font-family: var(--font-serif);
+      font-size: clamp(7rem, 18vw, 16rem);
+      font-weight: 300;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(201, 162, 75, 0.07);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    "
+  >
+    {site.fundacion}
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Columna izquierda: badge + contenido -->
+      <div>
+        <!-- Eyebrow -->
+        <div class="flex items-center gap-3 mb-8">
+          <span class="block w-8 h-px" style="background: var(--color-gold);"></span>
+          <span class="text-xs tracking-[0.3em] uppercase" style="color: var(--color-gold); font-family: var(--font-sans);">
+            Nuestro recorrido
+          </span>
+        </div>
+
+        <h2
+          class="mb-8"
+          style="
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            font-weight: 300;
+            color: var(--color-text);
+            line-height: 1.1;
+          "
+        >
+          Más de {anios} años<br />
+          <em style="color: var(--color-gold); font-style: italic;">dándole forma</em><br />
+          a los hogares.
+        </h2>
+
+        <div class="space-y-5" style="color: var(--color-muted); font-family: var(--font-sans); line-height: 1.8; font-weight: 300;">
+          <p>
+            DySJor nació en <strong style="color: var(--color-text);">{site.fundacion}</strong> como una manera de materializar a través de los muebles esas ideas de lo que uno quiere hacer de hogar. En nuestro recorrido hemos realizado todo tipo de muebles con diversas maderas y técnicas de ebanistería, basándonos en algo simple: <em style="color: var(--color-text);">tu idea hecha realidad.</em> Desde entonces, cada pieza que sale del taller lleva ese mismo compromiso.
+          </p>
+          <p>
+            Trabajamos con todo tipo de maderas nobles —cedro, roble, nogal, wengué, cerezo— y las combinamos con materiales de primera línea: vidrio templado, acero, luz LED integrada y laqueado poliuretano. No hay dos muebles iguales porque no hay dos espacios iguales.
+          </p>
+          <p>
+            Cada trabajo empieza escuchando al cliente y termina cuando el mueble encaja perfecto en su lugar.
+          </p>
+        </div>
+      </div>
+
+      <!-- Columna derecha: métricas + divisor dorado -->
+      <div class="space-y-0">
+        <!-- Línea superior -->
+        <div class="h-px mb-12" style="background: linear-gradient(to right, var(--color-gold), transparent);"></div>
+
+        {[
+          { num: `${site.fundacion}`, label: 'Año de fundación', sub: 'Más de cuatro décadas de oficio' },
+          { num: `+${anios}`, label: 'Años de experiencia', sub: 'Trayectoria ininterrumpida' },
+          { num: '100%', label: 'A medida', sub: 'Cada pieza es única y personalizada' },
+          { num: 'Premium', label: 'Materiales', sub: 'Los mejores del mercado, sin excepción' },
+        ].map((item, i) => (
+          <div>
+            <div class="flex items-start gap-6 py-8" style="border-bottom: 1px solid var(--color-border);">
+              <div
+                class="text-4xl md:text-5xl"
+                style="font-family: var(--font-serif); font-weight: 300; color: var(--color-gold); line-height: 1; min-width: 5rem;"
+              >
+                {item.num}
+              </div>
+              <div>
+                <div class="text-sm tracking-widest uppercase mb-1" style="color: var(--color-text); font-family: var(--font-sans);">
+                  {item.label}
+                </div>
+                <div class="text-sm" style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300;">
+                  {item.sub}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
