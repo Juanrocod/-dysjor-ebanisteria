@@ -70,18 +70,18 @@ const anios = new Date().getFullYear() - site.fundacion;
       </div>
 
       <!-- Columna derecha: foto del ebanista + descripción -->
-      <div class="flex flex-col gap-6">
-        <!-- Foto: altura fija para alinear con columna izquierda -->
-        <div class="w-full overflow-hidden" style="height: 390px;">
+
+<div class="flex flex-col gap-6 max-w-md mx-auto md:mx-0">
+        
+        <div class="w-full aspect-[9/10] overflow-hidden rounded-sm">
           <img
             src="/muebles_img/jorge_frascarelli_ebanista.jpg"
             alt="Jorge Frascarelli, ebanista fundador de DySJor"
-            class="w-full h-full object-cover object-top"
+            class="w-full h-full object-cover object-[center_35%]"
             style="filter: grayscale(20%) contrast(1.05);"
           />
         </div>
 
-        <!-- Descripción -->
         <div style="border-left: 2px solid var(--color-gold); padding-left: 1.25rem;">
           <p
             class="text-sm leading-relaxed mb-3"
@@ -96,6 +96,7 @@ const anios = new Date().getFullYear() - site.fundacion;
             Jorge Frascarelli — Ebanista &amp; Fundador
           </span>
         </div>
+
       </div>
 
     </div>
