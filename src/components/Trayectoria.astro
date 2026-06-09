@@ -27,18 +27,20 @@ const anios = new Date().getFullYear() - site.fundacion;
   </div>
 
   <div class="relative max-w-7xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
 
-      <!-- Columna izquierda: badge + contenido -->
+    <!-- Eyebrow -->
+    <div class="flex items-center gap-3 mb-12">
+      <span class="block w-8 h-px" style="background: var(--color-gold);"></span>
+      <span class="text-xs tracking-[0.3em] uppercase" style="color: var(--color-gold); font-family: var(--font-sans);">
+        Nuestro recorrido
+      </span>
+    </div>
+
+    <!-- Grid principal: texto izquierda / foto+descripción derecha -->
+    <div class="grid md:grid-cols-2 gap-16 items-start mb-20">
+
+      <!-- Columna izquierda: título + párrafos -->
       <div>
-        <!-- Eyebrow -->
-        <div class="flex items-center gap-3 mb-8">
-          <span class="block w-8 h-px" style="background: var(--color-gold);"></span>
-          <span class="text-xs tracking-[0.3em] uppercase" style="color: var(--color-gold); font-family: var(--font-sans);">
-            Nuestro recorrido
-          </span>
-        </div>
-
         <h2
           class="mb-8"
           style="
@@ -67,38 +69,65 @@ const anios = new Date().getFullYear() - site.fundacion;
         </div>
       </div>
 
-      <!-- Columna derecha: métricas + divisor dorado -->
-      <div class="space-y-0">
-        <!-- Línea superior -->
-        <div class="h-px mb-12" style="background: linear-gradient(to right, var(--color-gold), transparent);"></div>
+      <!-- Columna derecha: foto del ebanista + descripción -->
+      <div class="flex flex-col gap-6">
+        <!-- Foto -->
+        <div
+          class="overflow-hidden"
+          style="aspect-ratio: 4/5; max-height: 480px;"
+        >
+          <img
+            src="/muebles_img/jorge_frascarelli_ebanista.jpg"
+            alt="Jorge Frascarelli, ebanista fundador de DySJor"
+            class="w-full h-full object-cover object-top"
+            style="filter: grayscale(20%) contrast(1.05);"
+          />
+        </div>
 
-        {[
-          { num: `${site.fundacion}`, label: 'Año de fundación', sub: 'Más de cuatro décadas de oficio' },
-          { num: `+${anios}`, label: 'Años de experiencia', sub: 'Trayectoria ininterrumpida' },
-          { num: '100%', label: 'A medida', sub: 'Cada pieza es única y personalizada' },
-          { num: 'Premium', label: 'Materiales', sub: 'Los mejores del mercado, sin excepción' },
-        ].map((item, i) => (
-          <div>
-            <div class="flex items-start gap-6 py-8" style="border-bottom: 1px solid var(--color-border);">
-              <div
-                class="text-4xl md:text-5xl"
-                style="font-family: var(--font-serif); font-weight: 300; color: var(--color-gold); line-height: 1; min-width: 5rem;"
-              >
-                {item.num}
-              </div>
-              <div>
-                <div class="text-sm tracking-widest uppercase mb-1" style="color: var(--color-text); font-family: var(--font-sans);">
-                  {item.label}
-                </div>
-                <div class="text-sm" style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300;">
-                  {item.sub}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+        <!-- Descripción -->
+        <div style="border-left: 2px solid var(--color-gold); padding-left: 1.25rem;">
+          <p
+            class="text-sm leading-relaxed mb-3"
+            style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300; font-style: italic;"
+          >
+            "Desde la creación de la fábrica, se sostiene el directorio del ebanista Jorge Frascarelli, a cargo del diseño y control de la producción de todos los muebles DySJor."
+          </p>
+          <span
+            class="text-xs tracking-widest uppercase"
+            style="color: var(--color-gold); font-family: var(--font-sans);"
+          >
+            Jorge Frascarelli — Ebanista &amp; Fundador
+          </span>
+        </div>
       </div>
 
     </div>
+
+    <!-- Stats horizontales -->
+    <div class="h-px mb-12" style="background: linear-gradient(to right, var(--color-gold), transparent);"></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {[
+        { num: `${site.fundacion}`, label: 'Año de fundación', sub: 'Más de cuatro décadas de oficio' },
+        { num: `+${anios}`, label: 'Años de experiencia', sub: 'Trayectoria ininterrumpida' },
+        { num: '100%', label: 'A medida', sub: 'Cada pieza es única y personalizada' },
+        { num: 'Premium', label: 'Materiales', sub: 'Los mejores del mercado, sin excepción' },
+      ].map((item) => (
+        <div class="text-center md:text-left">
+          <div
+            class="text-4xl md:text-5xl mb-2"
+            style="font-family: var(--font-serif); font-weight: 300; color: var(--color-gold); line-height: 1;"
+          >
+            {item.num}
+          </div>
+          <div class="text-sm tracking-widest uppercase mb-1" style="color: var(--color-text); font-family: var(--font-sans);">
+            {item.label}
+          </div>
+          <div class="text-xs" style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300;">
+            {item.sub}
+          </div>
+        </div>
+      ))}
+    </div>
+
   </div>
 </section>
