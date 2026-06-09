@@ -70,30 +70,29 @@ const anios = new Date().getFullYear() - site.fundacion;
       </div>
 
       <!-- Columna derecha: foto del ebanista + descripción -->
-      <div class="flex flex-col gap-6">
-        <!-- Foto -->
-        <div class="flex justify-center">
+      <div class="flex flex-col items-center gap-6">
+        <!-- Foto + texto juntos, ancho dictado por la imagen -->
+        <div style="width: fit-content; max-width: 100%;">
           <img
             src="/muebles_img/jorge_frascarelli_ebanista.jpg"
             alt="Jorge Frascarelli, ebanista fundador de DySJor"
-            style="max-height: 420px; width: auto; max-width: 100%; display: block; filter: grayscale(20%) contrast(1.05);"
+            style="max-height: 480px; width: auto; max-width: 100%; display: block; filter: grayscale(20%) contrast(1.05);"
           />
-        </div>
 
-        <!-- Descripción -->
-        <div style="border-left: 2px solid var(--color-gold); padding-left: 1.25rem;">
-          <p
-            class="text-sm leading-relaxed mb-3"
-            style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300; font-style: italic;"
-          >
-            "Desde la creación de la fábrica, se sostiene el directorio del ebanista Jorge Frascarelli, a cargo del diseño y control de la producción de todos los muebles DySJor."
-          </p>
-          <span
-            class="text-xs tracking-widest uppercase"
-            style="color: var(--color-gold); font-family: var(--font-sans);"
-          >
-            Jorge Frascarelli — Ebanista &amp; Fundador
-          </span>
+          <!-- Descripción -->
+          <div style="border-left: 2px solid var(--color-gold); padding-left: 1.25rem; margin-top: 1.5rem;">
+            <p
+              class="text-sm leading-relaxed mb-3"
+              style="color: var(--color-muted); font-family: var(--font-sans); font-weight: 300; font-style: italic;"
+            >
+              "Desde la creación de la fábrica, se sostiene el directorio del ebanista Jorge Frascarelli, a cargo del diseño y control de la producción de todos los muebles DySJor."
+            </p>
+            <span
+              class="text-xs tracking-widest uppercase"
+              style="color: var(--color-gold); font-family: var(--font-sans);"
+            >
+              Jorge Frascarelli — Ebanista &amp; Fundador
+            </span>
         </div>
       </div>
 
