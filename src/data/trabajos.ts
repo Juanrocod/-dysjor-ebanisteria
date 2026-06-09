@@ -12,7 +12,7 @@ export const trabajos: Trabajo[] = [
     titulo: 'Placard a medida con luz LED',
     descripcion: 'Placard de piso a techo en cedro, con iluminación LED interior y herrajes italianos.',
     materiales: ['Cedro', 'Luz LED', 'Herrajes premium'],
-    imagenes: ['/muebles_img/columna.jpg'],
+    imagenes: ['/muebles_img/columna.jpg', '/muebles_img/biblioteca_madera.jpg'],
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ export const trabajos: Trabajo[] = [
     titulo: 'Cocina lacada en poliuretano',
     descripcion: 'Cocina integral con laqueado poliuretano blanco mate, manijas rebajadas y mesada de cuarzo.',
     materiales: ['MDF', 'Laqueado poliuretano', 'Cuarzo'],
-    imagenes: ['/muebles_img/biblioteca_madera.jpg'],
+    imagenes: ['/muebles_img/Edificio1.jpg', '/muebles_img/edificio2.jpg', '/muebles_img/edificio3.jpg'],
   },
   {
     id: 5,
@@ -47,6 +47,6 @@ export const trabajos: Trabajo[] = [
     titulo: 'Escritorio ejecutivo',
     descripcion: 'Escritorio de trabajo en wengué con compartimentos internos y pasa-cables integrado.',
     materiales: ['Wengué', 'Acero inoxidable'],
-    imagenes: ['/muebles_img/sillas.jpg', '/muebles_img/biblioteca_roble.jpg', '/muebles_img/bajillero.jpg', '/muebles_img/mesa_roble.jpg'],
+    imagenes: ['/muebles_img/bajillero.jpg', '/muebles_img/sillas.jpg', '/muebles_img/mesa_roble.jpg', '/muebles_img/biblioteca_roble.jpg'],
   },
 ];
